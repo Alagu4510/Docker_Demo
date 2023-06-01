@@ -1,0 +1,16 @@
+# Use the official Python base image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+#WORKDIR /app
+
+# Copy the program files into the container
+COPY main.py .
+COPY input.txt .
+
+
+# Install the required dependencies
+RUN pip install pytest
+
+# Run the main program when the container starts
+CMD ["python", "./main.py"]
